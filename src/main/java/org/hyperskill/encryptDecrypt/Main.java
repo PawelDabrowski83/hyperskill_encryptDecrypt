@@ -20,4 +20,9 @@ public class Main {
         return c;
     }
 
+    public static String switchLetters(String str) {
+        int counter = str.length();
+        char[] chars = str.toCharArray();
+    }
+
 }
