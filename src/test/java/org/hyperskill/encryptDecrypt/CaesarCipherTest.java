@@ -118,5 +118,116 @@ public class CaesarCipherTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldDecodeGivenAbcKey3ReturnXyz() {
+        // given
+        String source = "abc";
+        int key = 3;
+        String expected = "xyz";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenUpperAZTYKKey3ReturnUpperXWQVH() {
+        // given
+        String source = "AZTYK";
+        int key = 3;
+        String expected = "XWQVH";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenAbcKeyNeg1ReturnBcd() {
+        // given
+        String source = "abc";
+        int key = -1;
+        String expected = "bcd";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenCapitalLoremKeyNeg1ReturnCapitalMpsfn() {
+        // given
+        String source = "Lorem";
+        int key = -1;
+        String expected = "Mpsfn";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenEmptyReturnEmpty() {
+        // given
+        String source = "";
+        int key = -1;
+        String expected = "";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenNullReturnEmpty() {
+        // given
+        String source = null;
+        int key = -1;
+        String expected = "";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenAbcKey30ReturnWxy() {
+        // given
+        String source = "abc";
+        int key = 30;
+        String expected = "wxy";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecodeGivenAbcKeyNeg30ReturnEfg() {
+        // given
+        String source = "abc";
+        int key = -30;
+        String expected = "efg";
+
+        // when
+        String actual = CaesarCipher.decode(source, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
 
 }
