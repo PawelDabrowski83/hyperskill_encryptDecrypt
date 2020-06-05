@@ -97,4 +97,69 @@ public class MainTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldSwitchLettersGivenABCReturnZYX() {
+        // given
+        String sentence = "abc";
+        String expected = "zyx";
+
+        // when
+        String actual = Main.switchLetters(sentence);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchLettersGivenUpperDReturnUpperW() {
+        // given
+        String sentence = "D";
+        String expected = "W";
+
+        // when
+        String actual = Main.switchLetters(sentence);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchLettersGivenSimpleSentenceReturnOppositeSentence() {
+        // given
+        String sentence = "Ala ma kota.";
+        String expected = "Zoz nz plgz.";
+
+        // when
+        String actual = Main.switchLetters(sentence);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchLettersGivenEmptyReturnEmpty(){
+        // given
+        String sentence = "";
+        String expected = "";
+
+        // when
+        String actual = Main.switchLetters(sentence);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchLettersGivenNullReturnEmpty(){
+        // given
+        String sentence = null;
+        String expected = "";
+
+        // when
+        String actual = Main.switchLetters(sentence);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
 }
