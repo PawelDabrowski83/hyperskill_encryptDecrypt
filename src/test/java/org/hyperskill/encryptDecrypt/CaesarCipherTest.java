@@ -230,4 +230,129 @@ public class CaesarCipherTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldMoveCharGivenAKey1ReturnB() {
+        // given
+        char c = 'a';
+        int key = 1;
+        char expected = 'b';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenHashKey1ReturnHash() {
+        // given
+        char c = '#';
+        int key = 1;
+        char expected = '#';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenAKeyNeg1ReturnZ() {
+        // given
+        char c = 'a';
+        int key = -1;
+        char expected = 'z';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenUpperAKeyNeg2ReturnUpperY() {
+        // given
+        char c = 'A';
+        int key = -2;
+        char expected = 'Y';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenUpperTKey1ReturnU() {
+        // given
+        char c = 'T';
+        int key = 1;
+        char expected = 'U';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenUpperAKey30ReturnUpperE() {
+        // given
+        char c = 'A';
+        int key = 30;
+        char expected = 'E';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenUpperAKeyNeg30ReturnUpperW() {
+        // given
+        char c = 'A';
+        int key = -30;
+        char expected = 'W';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenQKey30ReturnU() {
+        // given
+        char c = 'q';
+        int key = 30;
+        char expected = 'u';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldMoveCharGivenHKeyNeg30ReturnD() {
+        // given
+        char c = 'h';
+        int key = -30;
+        char expected = 'd';
+
+        // when
+        char actual = CaesarCipher.moveChar(c, key);
+
+        // then
+        assertEquals(expected, actual);
+    }
 }
