@@ -1,5 +1,7 @@
 # hyperskill_encryptDecrypt
 
+<p>Project written with guidelines from Hyperskill, but with TDD approach and proper Git history.</p>
+
 <h2>Stage 1</h2>
 <p>Learn to input the data and encrypt it, replacing the letters. </p>
 <p>For the first stage, you need to manually encrypt the message "we found a treasure!" and print only the ciphertext (in lower case).
