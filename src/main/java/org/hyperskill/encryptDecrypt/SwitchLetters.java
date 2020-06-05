@@ -1,12 +1,10 @@
 package org.hyperskill.encryptDecrypt;
+import static org.hyperskill.encryptDecrypt.Main.LOWERCASE_A;
+import static org.hyperskill.encryptDecrypt.Main.LOWERCASE_Z;
+import static org.hyperskill.encryptDecrypt.Main.UPPERCASE_A;
+import static org.hyperskill.encryptDecrypt.Main.UPPERCASE_Z;
 
 public class SwitchLetters {
-
-    protected static final int LOWERCASE_A = (int) 'a';
-    protected static final int LOWERCASE_Z = (int) 'z';
-    protected static final int UPPERCASE_A = (int) 'A';
-    protected static final int UPPERCASE_Z = (int) 'Z';
-
     public static char findOppositeLetter(char c) {
         int charNumber = (int) c;
         if (charNumber >= LOWERCASE_A && charNumber <= LOWERCASE_Z) {
