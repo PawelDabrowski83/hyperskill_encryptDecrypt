@@ -2,6 +2,13 @@
 
 <h2>Stage 1</h2>
 <p>Learn to input the data and encrypt it, replacing the letters. </p>
+<p>For the first stage, you need to manually encrypt the message "we found a treasure!" and print only the ciphertext (in lower case).
+   
+   To encrypt the message, replace each letter with the letter that is in the corresponding position from the end of the English alphabet (a→z, b→y, c→x, ... x→c, y →b, z→a). Do not replace spaces or the exclamation mark.
+   
+   Use the given template to your program to print the ciphertext instead of the original message.
+   
+   The output should look like ## ##### # ########! where # is a lower-case English letter.</p>
 
 <h2>Stage 2</h2>
 <p>Learn to encrypt messages with a numeric key, using the Caesar cypher.  </p>
