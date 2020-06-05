@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class MainTest {
+public class SwitchLettersTest {
 
     @Test
     public void shouldFindOppositeLetterGivenAReturnsZ() {
@@ -13,7 +13,7 @@ public class MainTest {
         char expected = 'z';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -26,7 +26,7 @@ public class MainTest {
         char expected = 'x';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -39,7 +39,7 @@ public class MainTest {
         char expected = 'Y';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -52,7 +52,7 @@ public class MainTest {
         char expected = 's';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -65,7 +65,7 @@ public class MainTest {
         char expected = 'N';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -78,7 +78,7 @@ public class MainTest {
         char expected = '#';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -91,7 +91,7 @@ public class MainTest {
         char expected = '#';
 
         // when
-        char actual = Main.findOppositeLetter(c);
+        char actual = SwitchLetters.findOppositeLetter(c);
 
         // then
         assertEquals(expected, actual);
@@ -104,7 +104,7 @@ public class MainTest {
         String expected = "zyx";
 
         // when
-        String actual = Main.switchLetters(sentence);
+        String actual = SwitchLetters.switchLetters(sentence);
 
         // then
         assertEquals(expected, actual);
@@ -117,7 +117,7 @@ public class MainTest {
         String expected = "W";
 
         // when
-        String actual = Main.switchLetters(sentence);
+        String actual = SwitchLetters.switchLetters(sentence);
 
         // then
         assertEquals(expected, actual);
@@ -130,7 +130,7 @@ public class MainTest {
         String expected = "Zoz nz plgz.";
 
         // when
-        String actual = Main.switchLetters(sentence);
+        String actual = SwitchLetters.switchLetters(sentence);
 
         // then
         assertEquals(expected, actual);
@@ -143,7 +143,7 @@ public class MainTest {
         String expected = "";
 
         // when
-        String actual = Main.switchLetters(sentence);
+        String actual = SwitchLetters.switchLetters(sentence);
 
         // then
         assertEquals(expected, actual);
@@ -156,7 +156,7 @@ public class MainTest {
         String expected = "";
 
         // when
-        String actual = Main.switchLetters(sentence);
+        String actual = SwitchLetters.switchLetters(sentence);
 
         // then
         assertEquals(expected, actual);

@@ -1,6 +1,6 @@
 package org.hyperskill.encryptDecrypt;
 
-public class Main {
+public class SwitchLetters {
 
     protected static final int LOWERCASE_A = (int) 'a';
     protected static final int LOWERCASE_Z = (int) 'z';
