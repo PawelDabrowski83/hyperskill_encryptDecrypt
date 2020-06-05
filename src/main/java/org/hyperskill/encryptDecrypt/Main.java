@@ -1,9 +1,5 @@
 package org.hyperskill.encryptDecrypt;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class Main {
 
     protected static final int LOWERCASE_A = (int) 'a';
