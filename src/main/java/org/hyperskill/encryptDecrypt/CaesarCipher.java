@@ -29,19 +29,19 @@ public class CaesarCipher {
         if (charNumber >= LOWERCASE_A && charNumber <= LOWERCASE_Z) {
             charNumber += adjustedRange;
             if (charNumber < LOWERCASE_A) {
-                charNumber = LOWERCASE_Z - charNumber + LOWERCASE_A;
+                charNumber = LOWERCASE_Z - (LOWERCASE_A - charNumber) + 1;
             }
             if (charNumber > LOWERCASE_Z) {
-                charNumber = LOWERCASE_A + charNumber - LOWERCASE_Z;
+                charNumber = LOWERCASE_A + charNumber - LOWERCASE_Z - 1;
             }
         }
         if (charNumber >= UPPERCASE_A && charNumber <= UPPERCASE_Z) {
             charNumber += adjustedRange;
             if (charNumber < UPPERCASE_A) {
-                charNumber = UPPERCASE_Z - charNumber + UPPERCASE_A;
+                charNumber = UPPERCASE_Z - (UPPERCASE_A - charNumber) + 1;
             }
             if (charNumber > UPPERCASE_Z) {
-                charNumber = UPPERCASE_A + charNumber - UPPERCASE_Z;
+                charNumber = UPPERCASE_A + charNumber - UPPERCASE_Z - 1;
             }
         }
         return (char) charNumber;
