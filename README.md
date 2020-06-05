@@ -25,6 +25,7 @@
 
 <h2>Stage 3</h2>
 <p>Encrypting a message is only half of the deal: now learn to decrypt it as well, using a standard Unicode table. </p>
+<p>Write a program that reads three lines from the standard input: a target operation (enc - encryption, dec - decryption), a message or a cyphertext, and a key to encrypt/decrypt messages. All non-letter characters must be encrypted as well as regular letters. We recommend you to get an integer representation of each character (according to the Unicode table) to shift it.</p>
 
 <h2>Stage 4</h2>
 <p>Practice working with the command line, using it for passing the mode, the key and the string. </p>
