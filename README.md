@@ -14,6 +14,14 @@
 
 <h2>Stage 2</h2>
 <p>Learn to encrypt messages with a numeric key, using the Caesar cypher.  </p>
+<p>Write a program that reads an English message and an integer number (key) from the standard input and shifts each letter by the specified number according to its order in the alphabet. If you reach the end of the alphabet, start back at the beginning (a follows z).
+   
+   The English alphabet is below:
+   
+   abcdefghijklmnopqrstuvwxyz
+   The program should not modify non-letter characters.
+   
+</p>
 
 <h2>Stage 3</h2>
 <p>Encrypting a message is only half of the deal: now learn to decrypt it as well, using a standard Unicode table. </p>
