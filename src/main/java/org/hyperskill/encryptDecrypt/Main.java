@@ -1,5 +1,9 @@
 package org.hyperskill.encryptDecrypt;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main {
 
     protected static final int LOWERCASE_A = (int) 'a';
@@ -21,8 +25,15 @@ public class Main {
     }
 
     public static String switchLetters(String str) {
-        int counter = str.length();
-        char[] chars = str.toCharArray();
+        if (str == null || str.isEmpty()) {
+            return "";
+        }
+        return str.chars()
+                .map(e -> findOppositeLetter((char) e))
+                .collect(StringBuilder::new,
+                    StringBuilder::appendCodePoint,
+                    StringBuilder::append)
+                .toString();
     }
 
 }
