@@ -1,18 +1,19 @@
 package org.hyperskill.encryptDecrypt;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommandLineArgs {
 
-    protected final Pattern MODE_PATTERN = Pattern.compile("-mode (enc|dec)");
-    protected final Pattern KEY_PATTERN = Pattern.compile("-key (\\d+)");
-    protected final Pattern DATA_PATTERN = Pattern.compile("-data \"(.+)\"");
+    protected static final Pattern MODE_PATTERN = Pattern.compile("-mode (enc|dec)");
+    protected static final Pattern KEY_PATTERN = Pattern.compile("-key (\\d+)");
+    protected static final Pattern DATA_PATTERN = Pattern.compile("-data \"(.+)\"");
 
     private final String mode;
     private final int key;
     private final String data;
 
-    public static class Builder {
+    protected static class Builder {
         private String mode = "enc";
         private int key = 0;
         private String data = "";
@@ -72,5 +73,32 @@ public class CommandLineArgs {
         result = 31 * result + getKey();
         result = 31 * result + (getData() != null ? getData().hashCode() : 0);
         return result;
+    }
+
+    public static CommandLineArgs readCommand(String str) {
+        String mode = "";
+        int key = 0;
+        String data = "";
+
+        if (str != null && !str.isEmpty()) {
+            Matcher matcher = MODE_PATTERN.matcher(str);
+            if (matcher.matches()) {
+                mode = matcher.group(1);
+            }
+            matcher = KEY_PATTERN.matcher(str);
+            if (matcher.matches()) {
+                try {
+                    key = Integer.parseInt(matcher.group(1));
+                } catch (NumberFormatException e) {
+                    System.out.println("Cannot parse " + matcher.group(1));
+                }
+            }
+            matcher = DATA_PATTERN.matcher(str);
+            if (matcher.matches()) {
+                data = matcher.group(1);
+            }
+        }
+        return new CommandLineArgs.Builder().mode(mode).key(key).data(data).build();
+
     }
 }
