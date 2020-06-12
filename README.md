@@ -29,6 +29,14 @@
 
 <h2>Stage 4</h2>
 <p>Practice working with the command line, using it for passing the mode, the key and the string. </p>
+<p>Modify the previous program to work with command-line arguments instead of the standard input. The program must parse three arguments: -mode, -key and -data. The first argument should determine the program’s mode (enc - encryption, dec - decryption). The second argument is an integer key to modify the message, and the third argument is a text or ciphertext within quotes to encrypt or decrypt.
+   
+   All the arguments are guaranteed to be passed to the program. If for some reason it turns out to be wrong:
+   
+       If there is no -mode, the program should work in enc mode.
+       If there is no -key, the program should consider that key = 0.
+       If there is no -data, the program should assume that the data is an empty string.
+</p>
 
 <h2>Stage 5</h2>
 <p>Work with files: learn to store your data in a file.  </p>
