@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class CommandLineArgs {
 
     protected static final Pattern MODE_PATTERN = Pattern.compile("-mode (enc|dec)");
-    protected static final Pattern KEY_PATTERN = Pattern.compile("-key (\\d+)");
+    protected static final Pattern KEY_PATTERN = Pattern.compile("-key (-?\\d+)");
     protected static final Pattern DATA_PATTERN = Pattern.compile("-data \"(.+)\"");
 
     private final String mode;
@@ -22,7 +22,11 @@ public class CommandLineArgs {
         }
 
         public Builder mode(String val) {
-            mode = val;
+            if (val.isEmpty()) {
+                mode = "enc";
+            } else {
+                mode = val;
+            }
             return this;
         }
         public Builder key(int val) {
@@ -75,6 +79,15 @@ public class CommandLineArgs {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "CommandLineArgs{" +
+                "mode='" + mode + '\'' +
+                ", key=" + key +
+                ", data='" + data + '\'' +
+                '}';
+    }
+
     public static CommandLineArgs readCommand(String str) {
         String mode = "";
         int key = 0;
@@ -82,11 +95,11 @@ public class CommandLineArgs {
 
         if (str != null && !str.isEmpty()) {
             Matcher matcher = MODE_PATTERN.matcher(str);
-            if (matcher.matches()) {
+            if (matcher.find()) {
                 mode = matcher.group(1);
             }
             matcher = KEY_PATTERN.matcher(str);
-            if (matcher.matches()) {
+            if (matcher.find()) {
                 try {
                     key = Integer.parseInt(matcher.group(1));
                 } catch (NumberFormatException e) {
@@ -94,7 +107,7 @@ public class CommandLineArgs {
                 }
             }
             matcher = DATA_PATTERN.matcher(str);
-            if (matcher.matches()) {
+            if (matcher.find()) {
                 data = matcher.group(1);
             }
         }
